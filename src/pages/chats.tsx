@@ -18,7 +18,7 @@ const MessageFormSocial = dynamic(() =>
 )
 
 export default function Chats() {
-  const { username, secret } = useContext<ContextType>(Context);
+  const { username, secret } = useContext(Context) as ContextType;
   const [showChat, setShowChat] = useState(false);
   const router = useRouter();
 
