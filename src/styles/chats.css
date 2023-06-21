@@ -162,3 +162,33 @@
   background-color: white !important;
   border-radius: 0px !important;
 }
+
+@media screen and (max-width: 768px) {
+  .ce-chat-engine {
+    height: 100%
+  }
+
+  .ce-feed-container {
+    height: 100%;
+    padding: 10;
+  }
+
+  .ce-chat-view {
+    height: 100%
+  }
+
+  .ce_message-bubble {
+   padding: 3rem
+  }
+
+  .ce-chat-title {
+    background-color: #4a5162 !important;
+  }
+
+  #ce-social-msg-form-container {
+    position: fixed !important;
+    bottom: 0px;
+    width: 100%;
+    background-color: white;
+  }
+}
