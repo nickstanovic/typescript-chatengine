@@ -1,6 +1,6 @@
 import React, { ReactNode, useState, createContext } from "react"
 
-interface IContext {
+export interface IContext {
   username: string,
   setUsername: (username: string) => void,
   secret: string,
