@@ -2,6 +2,11 @@
   box-shadow: 0 2px 15px rgb(0 0 0 / 68%);
 }
 
+/* without !important none of the chat engine modifications work
+   normally this is bad practice
+   this shortcomings of chat engine
+*/
+
 /* Chat List */
 .ce-wrapper {
   background-color: #4a5162 !important;
@@ -159,36 +164,31 @@
 }
 
 .ce-autocomplete-close {
-  background-color: white !important;
+  background-color: #4a5162 !important;
   border-radius: 0px !important;
 }
 
 @media screen and (max-width: 768px) {
-  .ce-chat-engine {
-    height: 100%
-  }
-
-  .ce-feed-container {
-    height: 100%;
-    padding: 10;
-  }
-
   .ce-chat-view {
     height: 100%
+  }
+
+  .ce-chat-title {
+  background-color: #4a5162 !important;
   }
 
   .ce_message-bubble {
    padding: 3rem
   }
 
-  .ce-chat-title {
-    background-color: #4a5162 !important;
-  }
-
   #ce-social-msg-form-container {
     position: fixed !important;
     bottom: 0px;
     width: 100%;
-    background-color: white;
+    background-color: #4a5162;
+  }
+
+  #ce-feed-container.ce-chat-feed-container {
+    height: 93vh !important;
   }
 }
