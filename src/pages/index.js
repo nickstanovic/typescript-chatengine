@@ -24,35 +24,43 @@ export default function Auth() {
   return (
     <div className="background">
       <div className="auth-container">
-        <form className="auth-form" onSubmit={event => onSubmit(event)}>
-          <div className="auth-title">NextJS Chat</div>
+        <form
+          className="auth-form"
+          onSubmit={e => onSubmit(e)}
+          aria-label="Authentication Form"
+        >
+          <div className="auth-title" aria-label="Nick's Cool Chat">Nick's Cool Chat</div>
 
           <div className="input-container">
             <input
+              id="username-input"
               placeholder="Name"
+              aria-label="Name"
               className="text-input"
-              onChange={event => setUsername(event.target.value)}
+              onChange={e => setUsername(e.target.value)}
             />
           </div>
 
           <div className="input-container">
             <input
-              placeholder="Password"
               type="password"
+              id="password-input"
+              placeholder="Password"
+              aria-label="Password"
               className="text-input"
-              onChange={event => setSecret(event.target.value)}
+              onChange={e => setSecret(e.target.value)}
             />
           </div>
 
           <button
             type="submit"
             className="submit-button"
-            onSubmit={event => onSubmit(event)}
+            aria-label="Submit Login or Sign Up"
           >
             Login / Sign Up
           </button>
         </form>
       </div>
     </div>
-  )
+  );
 }
