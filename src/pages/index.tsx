@@ -16,7 +16,7 @@ export default function Auth() {
         .put(
             "https://api.chatengine.io/users/",
             { username, secret },
-            { headers: { "Private-Key": "a5cde5eb-da3b-489c-8a53-d6b8254fe1ac" } }
+            { headers: { "Private-Key": null } }
         )
         .then(() => router.push("/chats"))
   }
