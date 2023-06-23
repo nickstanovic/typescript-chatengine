@@ -1,11 +1,11 @@
 import React, { useContext, FormEvent } from "react";
 import { Context } from "../context";
-import axios from "axios"
-import { useRouter } from "next/router"
+import axios from "axios";
+import { useRouter } from "next/router";
 
 export default function Auth() {
-  const { username, secret, setUsername, setSecret } = useContext(Context)
-  const router = useRouter()
+  const { username, secret, setUsername, setSecret } = useContext(Context);
+  const router = useRouter();
 
   function onSubmit(event: FormEvent) {
     event.preventDefault();
@@ -16,9 +16,9 @@ export default function Auth() {
         .put(
             "https://api.chatengine.io/users/",
             { username, secret },
-            { headers: { "Private-Key": "a5cde5eb-da3b-489c-8a53-d6b8254fe1ac" } }
+            { headers: { "Private-Key": process.env.PRIVATE_KEY } }
         )
-        .then(() => router.push("/chats"))
+        .then(() => router.push("/chats"));
   }
 
   return (
@@ -29,7 +29,9 @@ export default function Auth() {
               onSubmit={onSubmit}
               aria-label="Authentication Form"
           >
-            <div className="auth-title" aria-label="Nick's Cool Chat">Nick's Cool Chat</div>
+            <div className="auth-title" aria-label="Nick's Cool Chat">
+              Nick's Cool Chat
+            </div>
 
             <div className="input-container">
               <input
@@ -37,7 +39,7 @@ export default function Auth() {
                   placeholder="Name"
                   aria-label="Name"
                   className="text-input"
-                  onChange={e => setUsername(e.target.value)}
+                  onChange={(e) => setUsername(e.target.value)}
               />
             </div>
 
@@ -48,8 +50,15 @@ export default function Auth() {
                   placeholder="Password"
                   aria-label="Password"
                   className="text-input"
-                  onChange={e => setSecret(e.target.value)}
+                  onChange={(e) => setSecret(e.target.value)}
               />
+              <div className="help-tip">
+                <p>
+                  Simply put your name and make a password of your choosing to
+                  track your message and chat history. Use that same info to login
+                  in the future.
+                </p>
+              </div>
             </div>
 
             <button
@@ -64,4 +73,3 @@ export default function Auth() {
       </div>
   );
 }
-``
